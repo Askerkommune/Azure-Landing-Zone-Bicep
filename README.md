@@ -13,11 +13,7 @@ Welcome to the Azure Landing Zones Bicep repo for Asker Kommune.
 
 We have deployed everything exept **networking as it was not needed.**
 
-<<<<<<< HEAD
 Deployment steps can be found here - [Deployment][Deployment]
-=======
-Deployment steps can be found here - [deployment][deployment.md]
->>>>>>> 40e3ec028d6c8778153edd5101290ef8aa03cb14
 
 Detailed information about how to use, deploy and extend artifacts found in this repo can be found on our Wiki:
 
