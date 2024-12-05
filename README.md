@@ -13,7 +13,7 @@ Welcome to the Azure Landing Zones Bicep repo for Asker Kommune.
 
 We have deployed everything exept **networking as it was not needed.**
 
-Deployment steps can be found here - [Deployment][deployment]
+Deployment steps can be found here - [Deployment][Deployment]
 
 Detailed information about how to use, deploy and extend artifacts found in this repo can be found on our Wiki:
 
@@ -110,6 +110,7 @@ For support on the artifacts contained in this repository, please refer to [this
  [//]: # (INSERT LINK LABELS BELOW)
  [//]: # (************************)
 
+[Deployment]:                                 https://github.com/Askerkommune/Azure-Landing-Zone-Bicep/blob/main/deployment.md "Deployment"
 [wiki_home]:                                  https://github.com/Azure/ALZ-Bicep/wiki/home "Wiki - Home"
 [wiki_deployment_flow]:                            https://github.com/Azure/ALZ-Bicep/wiki/DeploymentFlow "Wiki - Deployment Flow"
 [wiki_deployment_flow_hs]:                            https://github.com/Azure/ALZ-Bicep/wiki/DeploymentFlowHS "Wiki - Deployment Flow - Hub and Spoke"
@@ -133,3 +134,4 @@ For support on the artifacts contained in this repository, please refer to [this
 [wiki_pipelines_ado]:                          <https://github.com/Azure/ALZ-Bicep/wiki/PipelinesADO> "Wiki - Sample Pipelines - Azure DevOps"
 [code_tours]:                                   <https://github.com/Azure/ALZ-Bicep/wiki/CodeTour> "Wiki - Code tours"
 [aac_article]:                                  <https://learn.microsoft.com/azure/architecture/landing-zones/bicep/landing-zone-bicep> "Azure Architecture Center - Azure landing zones - Bicep modules design considerations"
+

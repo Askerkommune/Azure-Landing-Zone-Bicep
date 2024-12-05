@@ -1,5 +1,5 @@
 First i give my account access to azure resources:
-https://learn.microsoft.com/en-us/azure/role-based-access-control/elevate-access-global-admin?tabs=powershell
+[learn.microsoft.com][Link]
 
 Then i give my account Owner at Tenant root group.
 ```
@@ -72,3 +72,8 @@ az deployment mg create --name "Policy-Assignments" --location norwayeast --mana
 ```
 az deployment mg create --name "Policy-Assignments" --location norwayeast --management-group-id rlab --template-file "infra-as-code/bicep/modules/policy/assignments/alzDefaults/alzDefaultPolicyAssignments.bicep" --parameters "infra-as-code/bicep/modules/policy/assignments/alzDefaults/parameters/alzDefaultPolicyAssignments.parameters.all.json"
 ```
+
+
+
+
+[Link]:                                 https://learn.microsoft.com/en-us/azure/role-based-access-control/elevate-access-global-admin?tabs=azure-portal "learn.microsoft.com"
