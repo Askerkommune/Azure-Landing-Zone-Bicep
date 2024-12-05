@@ -1,4 +1,4 @@
-# Azure Landing Zones (ALZ) - Bicep
+# Azure Landing Zones (ALZ) - Bicep - Asker Kommune
 
 [![Average time to resolve an issue](http://isitmaintained.com/badge/resolution/azure/alz-bicep.svg)](http://isitmaintained.com/project/azure/alz-bicep "Average time to resolve an issue")
 [![Percentage of issues still open](http://isitmaintained.com/badge/open/azure/alz-bicep.svg)](http://isitmaintained.com/project/azure/alz-bicep "Percentage of issues still open")
@@ -9,7 +9,11 @@
 
 ![Bicep Logo](docs/wiki/media/bicep-logo.png)
 
-Welcome to the Azure Landing Zones Bicep repo.
+Welcome to the Azure Landing Zones Bicep repo for Asker Kommune.
+
+We have deployed everything exept **networking as it was not needed.**
+
+Deployment steps can be found here - [Deployment][Deployment]
 
 Detailed information about how to use, deploy and extend artifacts found in this repo can be found on our Wiki:
 
