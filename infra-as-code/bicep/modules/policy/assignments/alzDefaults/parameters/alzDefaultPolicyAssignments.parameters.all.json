@@ -3,18 +3,23 @@
   "contentVersion": "1.0.0.0",
   "parameters": {
     "parTopLevelManagementGroupPrefix": {
-      "value": "alz"
+      "value": "ak"
     },
     "parTopLevelManagementGroupSuffix": {
       "value": ""
     },
     "parDdosEnabled": {
-      "value": true
+      "value": false
     },
     "parTopLevelPolicyAssignmentSovereigntyGlobal": {
       "value": {
-        "parTopLevelSovereigntyGlobalPoliciesEnable": false,
-        "parListOfAllowedLocations": [],
+        "parTopLevelSovereigntyGlobalPoliciesEnable": true,
+        "parListOfAllowedLocations": [
+          "westeurope",
+          "norwayeast",
+          "norwaywest",
+          "northeurope"
+        ],
         "parPolicyEffect": "Deny"
       }
     },
@@ -39,7 +44,7 @@
       "value": "norwayeast"
     },
     "parLogAnalyticsWorkspaceResourceId": {
-      "value": "/subscriptions/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/resourceGroups/alz-logging/providers/Microsoft.OperationalInsights/workspaces/alz-log-analytics"
+      "value": "/subscriptions/5dc0166e-5c37-4b6f-be96-11ec28a8e4b3/resourcegroups/rg-ak-logging-001/providers/microsoft.operationalinsights/workspaces/alz-log-analytics"
     },
     "parLogAnalyticsWorkspaceLogRetentionInDays": {
       "value": "365"
@@ -48,28 +53,25 @@
       "value": "allLogs"
     },
     "parDataCollectionRuleVMInsightsResourceId": {
-      "value": "/subscriptions/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/resourceGroups/alz-logging/providers/Microsoft.Insights/dataCollectionRules/alz-ama-vmi-dcr"
+      "value": "/subscriptions/5dc0166e-5c37-4b6f-be96-11ec28a8e4b3/resourceGroups/rg-ak-logging-001/providers/Microsoft.Insights/dataCollectionRules/alz-ama-vmi-dcr"
     },
     "parDataCollectionRuleChangeTrackingResourceId": {
-      "value": "/subscriptions/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/resourceGroups/alz-logging/providers/Microsoft.Insights/dataCollectionRules/alz-ama-ct-dcr"
+      "value": "/subscriptions/5dc0166e-5c37-4b6f-be96-11ec28a8e4b3/resourceGroups/rg-ak-logging-001/providers/Microsoft.Insights/dataCollectionRules/alz-ama-ct-dcr"
     },
     "parDataCollectionRuleMDFCSQLResourceId": {
-      "value": "/subscriptions/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/resourceGroups/alz-logging/providers/Microsoft.Insights/dataCollectionRules/ama-mdfcsql-default-dcr"
+      "value": "/subscriptions/5dc0166e-5c37-4b6f-be96-11ec28a8e4b3/resourceGroups/rg-ak-logging-001/providers/Microsoft.Insights/dataCollectionRules/alz-ama-mdfcsql-dcr"
     },
     "parUserAssignedManagedIdentityResourceId": {
-      "value": "/subscriptions/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/resourcegroups/alz-logging/providers/Microsoft.ManagedIdentity/userAssignedIdentities/alz-umi-identity"
-    },
-    "parAutomationAccountName": {
-      "value": "alz-automation-account"
+      "value": "/subscriptions/5dc0166e-5c37-4b6f-be96-11ec28a8e4b3/resourceGroups/rg-ak-logging-001/providers/Microsoft.ManagedIdentity/userAssignedIdentities/alz-umi-identity"
     },
     "parMsDefenderForCloudEmailSecurityContact": {
-      "value": "security_contact@replace_me.com"
+      "value": "christian.melgaard@asker.kommune.no"
     },
     "parDdosProtectionPlanId": {
-      "value": "/subscriptions/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/resourceGroups/rg-alz-hub-networking-001/providers/Microsoft.Network/ddosProtectionPlans/alz-ddos-plan"
+      "value": ""
     },
     "parPrivateDnsResourceGroupId": {
-      "value": "/subscriptions/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/resourceGroups/rg-alz-hub-networking-001"
+      "value": ""
     },
     "parPrivateDnsZonesLocation": {
       "value": "norwayeast"

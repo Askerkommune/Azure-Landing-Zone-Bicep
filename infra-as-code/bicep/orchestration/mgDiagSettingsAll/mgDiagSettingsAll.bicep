@@ -24,13 +24,13 @@ param parLogAnalyticsWorkspaceResourceId string
 @sys.description('Diagnostic Settings Name.')
 param parDiagnosticSettingsName string = 'toLa'
 
-@sys.description('Deploys Diagnostic Settings on Corp & Online Management Groups beneath Landing Zones Management Group if set to true.')
+@sys.description('Deploys Diagnostic Settings on Internal & Online Management Groups beneath Landing Zones Management Group if set to true.')
 param parLandingZoneMgAlzDefaultsEnable bool = true
 
 @sys.description('Deploys Diagnostic Settings on Management, Connectivity and Identity Management Groups beneath Platform Management Group if set to true.')
 param parPlatformMgAlzDefaultsEnable bool = true
 
-@sys.description('Deploys Diagnostic Settings on Confidential Corp & Confidential Online Management Groups beneath Landing Zones Management Group if set to true.')
+@sys.description('Deploys Diagnostic Settings on Confidential Internal & Confidential Online Management Groups beneath Landing Zones Management Group if set to true.')
 param parLandingZoneMgConfidentialEnable bool = false
 
 @sys.description('Set Parameter to true to Opt-out of deployment telemetry.')
@@ -46,7 +46,7 @@ var varMgIds = {
 
 // Used if parLandingZoneMgAlzDefaultsEnable == true
 var varLandingZoneMgChildrenAlzDefault = {
-  landingZonesCorp: '${parTopLevelManagementGroupPrefix}-landingzones-corp${parTopLevelManagementGroupSuffix}'
+  landingZonesInternal: '${parTopLevelManagementGroupPrefix}-landingzones-Internal${parTopLevelManagementGroupSuffix}'
   landingZonesOnline: '${parTopLevelManagementGroupPrefix}-landingzones-online${parTopLevelManagementGroupSuffix}'
 }
 
@@ -59,7 +59,7 @@ var varPlatformMgChildrenAlzDefault = {
 
 // Used if parLandingZoneMgConfidentialEnable == true
 var varLandingZoneMgChildrenConfidential = {
-  landingZonesConfidentialCorp: '${parTopLevelManagementGroupPrefix}-landingzones-confidential-corp${parTopLevelManagementGroupSuffix}'
+  landingZonesConfidentialInternal: '${parTopLevelManagementGroupPrefix}-landingzones-confidential-Internal${parTopLevelManagementGroupSuffix}'
   landingZonesConfidentialOnline: '${parTopLevelManagementGroupPrefix}-landingzones-confidential-online${parTopLevelManagementGroupSuffix}'
 }
 
