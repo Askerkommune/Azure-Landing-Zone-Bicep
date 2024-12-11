@@ -60,7 +60,7 @@ param parLandingZoneChildrenMgAlzDefaultsEnable bool = true
 param parLandingZoneMgConfidentialEnable bool = false
 
 @description('Location of Log Analytics Workspace & Automation Account.')
-param parLogAnalyticsWorkSpaceAndAutomationAccountLocation string = 'eastus'
+param parLogAnalyticsWorkSpaceAndAutomationAccountLocation string = 'norwayeast'
 
 @description('Resource ID of Log Analytics Workspace.')
 param parLogAnalyticsWorkspaceResourceId string = ''
@@ -549,9 +549,9 @@ var varGeoCodes = {
   centraluseuap: 'ccy'
   chilecentral: 'clc'
   eastasia: 'ea'
-  eastus: 'eus'
-  eastus2: 'eus2'
-  eastus2euap: 'ecy'
+  norwayeast: 'eus'
+  norwayeast2: 'eus2'
+  norwayeast2euap: 'ecy'
   francecentral: 'frc'
   francesouth: 'frs'
   germanynorth: 'gn'

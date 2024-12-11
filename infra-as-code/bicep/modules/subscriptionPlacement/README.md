@@ -25,7 +25,7 @@ In this example, the subscription `xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx` will be
 
 dateYMD=$(date +%Y%m%dT%H%M%S%NZ)
 NAME="alz-SubscriptionPlacementDeployment-${dateYMD}"
-LOCATION="eastus"
+LOCATION="norwayeast"
 MGID="alz"
 TEMPLATEFILE="infra-as-code/bicep/modules/subscriptionPlacement/subscriptionPlacement.bicep"
 PARAMETERS="@infra-as-code/bicep/modules/subscriptionPlacement/parameters/subscriptionPlacement.parameters.all.json"
@@ -53,7 +53,7 @@ az deployment mg create --name ${NAME:0:63} --location $LOCATION --management-gr
 
 $inputObject = @{
   DeploymentName        = -join ('alz-SubscriptionPlacementDeployment-{0}' -f (Get-Date -Format 'yyyyMMddTHHMMssffffZ'))[0..63]
-  Location              = 'eastus'
+  Location              = 'norwayeast'
   ManagementGroupId     = 'alz'
   TemplateFile          = "infra-as-code/bicep/modules/subscriptionPlacement/subscriptionPlacement.bicep"
   TemplateParameterFile = 'infra-as-code/bicep/modules/subscriptionPlacement/parameters/subscriptionPlacement.parameters.all.json'

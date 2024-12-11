@@ -3,19 +3,19 @@
   "contentVersion": "1.0.0.0",
   "parameters": {
     "parLocation": {
-      "value": "eastus"
+      "value": "norwayeast"
     },
     "parSecondaryLocation": {
-      "value": "eastus2"
+      "value": "norwayeast2"
     },
     "parCompanyPrefix": {
       "value": "alz"
     },
     "parHubNetworkName": {
-      "value": "alz-hub-eastus"
+      "value": "alz-hub-norwayeast"
     },
     "parHubNetworkNameSecondaryLocation": {
-      "value": "alz-hub-eastus2"
+      "value": "alz-hub-norwayeast2"
     },
     "parHubNetworkAddressPrefix": {
       "value": "10.20.0.0/16"
@@ -104,10 +104,10 @@
       "value": false
     },
     "parAzBastionName": {
-      "value": "alz-bastion-eastus"
+      "value": "alz-bastion-norwayeast"
     },
     "parAzBastionNameSecondaryLocation": {
-      "value": "alz-bastion-eastus2"
+      "value": "alz-bastion-norwayeast2"
     },
     "parAzBastionSku": {
       "value": "Standard"
@@ -122,31 +122,31 @@
       "value": false
     },
     "parAzBastionNsgName": {
-      "value": "nsg-AzureBastionSubnet-eastus"
+      "value": "nsg-AzureBastionSubnet-norwayeast"
     },
     "parAzBastionNsgNameSecondaryLocation": {
-      "value": "nsg-AzureBastionSubnet-eastus2"
+      "value": "nsg-AzureBastionSubnet-norwayeast2"
     },
     "parDdosEnabled": {
       "value": true
     },
     "parDdosPlanName": {
-      "value": "alz-ddos-plan-eastus"
+      "value": "alz-ddos-plan-norwayeast"
     },
     "parDdosEnabledSecondaryLocation": {
       "value": true
     },
     "parDdosPlanNameSecondaryLocation": {
-      "value": "alz-ddos-plan-eastus2"
+      "value": "alz-ddos-plan-norwayeast2"
     },
     "parAzFirewallEnabled": {
       "value": true
     },
     "parAzFirewallName": {
-      "value": "alz-azfw-eastus"
+      "value": "alz-azfw-norwayeast"
     },
     "parAzFirewallPoliciesName": {
-      "value": "alz-azfwpolicy-eastus"
+      "value": "alz-azfwpolicy-norwayeast"
     },
     "parAzFirewallTier": {
       "value": "Standard"
@@ -165,10 +165,10 @@
       "value": true
     },
     "parAzFirewallNameSecondaryLocation": {
-      "value": "alz-azfw-eastus2"
+      "value": "alz-azfw-norwayeast2"
     },
     "parAzFirewallPoliciesNameSecondaryLocation": {
-      "value": "alz-azfwpolicy-eastus2"
+      "value": "alz-azfwpolicy-norwayeast2"
     },
     "parAzFirewallTierSecondaryLocation": {
       "value": "Standard"
@@ -218,7 +218,7 @@
       "value": []
     },
     "parHubRouteTableNameSecondaryLocation": {
-      "value": "alz-hub-routetable-eastus2"
+      "value": "alz-hub-routetable-norwayeast2"
     },
     "parDisableBgpRoutePropagationSecondaryLocation": {
       "value": false
@@ -230,7 +230,7 @@
       "value": []
     },
     "parHubRouteTableName": {
-      "value": "alz-hub-routetable-eastus"
+      "value": "alz-hub-routetable-norwayeast"
     },
     "parDisableBgpRoutePropagation": {
       "value": false

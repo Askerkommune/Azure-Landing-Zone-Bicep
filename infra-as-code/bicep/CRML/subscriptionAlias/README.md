@@ -36,7 +36,7 @@ In this example, the Subscription is created upon an EA Account through a tenant
 
 dateYMD=$(date +%Y%m%dT%H%M%S%NZ)
 NAME="alz-SubscriptionAlias-${dateYMD}"
-LOCATION="eastus"
+LOCATION="norwayeast"
 PARAMETERS="@infra-as-code/bicep/CRML/subscriptionAlias/parameters/subscriptionAlias.parameters.all.json"
 TEMPLATEFILE="infra-as-code/bicep/CRML/subscriptionAlias/subscriptionAlias.bicep"
 
@@ -51,7 +51,7 @@ Use this module if you do not want to grant Tenant Root Management Group Deploym
 
 dateYMD=$(date +%Y%m%dT%H%M%S%NZ)
 NAME="alz-SubscriptionAlias-${dateYMD}"
-LOCATION="eastus"
+LOCATION="norwayeast"
 PARAMETERS="@infra-as-code/bicep/CRML/subscriptionAlias/parameters/subscriptionAlias.parameters.all.json"
 TEMPLATEFILE="infra-as-code/bicep/CRML/subscriptionAlias/subscriptionAliasScopeEscape.bicep"
 MGID="alz"
@@ -66,7 +66,7 @@ az deployment mg create --name ${NAME:0:63} --location $LOCATION --template-file
 $inputObject = @{
   DeploymentName        = -join ('alz-SubscriptionAlias-{0}' -f (Get-Date -Format 'yyyyMMddTHHMMssffffZ'))[0..63]
   TemplateParameterFile = 'infra-as-code/bicep/CRML/subscriptionAlias/parameters/subscriptionAlias.parameters.all.json'
-  Location              = 'EastUS'
+  Location              = 'norwayeast'
   TemplateFile          = "infra-as-code/bicep/CRML/subscriptionAlias/subscriptionAlias.bicep"
 }
 
@@ -82,7 +82,7 @@ Use this module if you do not want to grant Tenant Root Management Group Deploym
 $inputObject = @{
   DeploymentName        = -join ('alz-SubscriptionAlias-{0}' -f (Get-Date -Format 'yyyyMMddTHHMMssffffZ'))[0..63]
   TemplateParameterFile = 'infra-as-code/bicep/CRML/subscriptionAlias/parameters/subscriptionAlias.parameters.all.json'
-  Location              = 'EastUS'
+  Location              = 'norwayeast'
   TemplateFile          = "infra-as-code/bicep/CRML/subscriptionAlias/subscriptionAliasScopeEscape.bicep"
   ManagementGroupId     = 'alz'
 }

@@ -51,7 +51,7 @@ PARAMETERS="@infra-as-code/bicep/modules/logging/parameters/logging.parameters.a
 # Create Resource Group - optional when using an existing resource group
 az group create \
   --name $GROUP \
-  --location eastus
+  --location norwayeast
 
 # Deploy Module
 az deployment group create --name ${NAME:0:63} --resource-group $GROUP --template-file $TEMPLATEFILE --parameters $PARAMETERS
@@ -104,7 +104,7 @@ Select-AzSubscription -SubscriptionId $ManagementSubscriptionId
 # Create Resource Group - optional when using an existing resource group
 New-AzResourceGroup `
   -Name $inputObject.ResourceGroupName `
-  -Location eastus
+  -Location norwayeast
 
 New-AzResourceGroupDeployment @inputObject
 ```

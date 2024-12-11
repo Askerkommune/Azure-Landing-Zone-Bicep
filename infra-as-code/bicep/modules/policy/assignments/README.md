@@ -34,7 +34,7 @@ dateYMD=$(date +%Y%m%dT%H%M%S%NZ)
 NAME="alz-alz-PolicyDenyAssignmentsDeployment-${dateYMD}"
 
 PARAMETERS="@infra-as-code/bicep/modules/policy/assignments/parameters/policyAssignmentManagementGroup.deny.parameters.all.json"
-LOCATION="eastus"
+LOCATION="norwayeast"
 MGID="alz-landingzones"
 TEMPLATEFILE="infra-as-code/bicep/modules/policy/assignments/policyAssignmentManagementGroup.bicep"
 
@@ -63,7 +63,7 @@ az deployment mg create --name ${NAME:0:63} --location $LOCATION --management-gr
 $inputObject = @{
   DeploymentName        = -join ('alz-PolicyDenyAssignments-{0}' -f (Get-Date -Format 'yyyyMMddTHHMMssffffZ'))[0..63]
   ManagementGroupId     = 'alz-landingzones'
-  Location              = 'eastus'
+  Location              = 'norwayeast'
   TemplateParameterFile = 'infra-as-code/bicep/modules/policy/assignments/parameters/policyAssignmentManagementGroup.deny.parameters.all.json'
   TemplateFile          = "infra-as-code/bicep/modules/policy/assignments/policyAssignmentManagementGroup.bicep"
 }
@@ -101,7 +101,7 @@ In this example, the `Deploy-MDFC-Config` custom policy definition will be deplo
 
 dateYMD=$(date +%Y%m%dT%H%M%S%NZ)
 NAME="alz-PolicyDineAssignments-${dateYMD}"
-LOCATION="eastus"
+LOCATION="norwayeast"
 MGID="alz-landingzones"
 TEMPLATEFILE="infra-as-code/bicep/modules/policy/assignments/policyAssignmentManagementGroup.bicep"
 PARAMETERS="@infra-as-code/bicep/modules/policy/assignments/parameters/policyAssignmentManagementGroup.dine.parameters.all.json"
@@ -114,7 +114,7 @@ OR
 
 dateYMD=$(date +%Y%m%dT%H%M%S%NZ)
 NAME="alz-PolicyDineAssignments-${dateYMD}"
-LOCATION="eastus"
+LOCATION="norwayeast"
 MGID="alz-landingzones"
 TEMPLATEFILE="infra-as-code/bicep/modules/policy/assignments/policyAssignmentManagementGroup.bicep"
 PARAMETERS="@infra-as-code/bicep/modules/policy/assignments/parameters/policyAssignmentManagementGroup.dine.parameters.all.json"
@@ -129,7 +129,7 @@ az deployment mg create --name $NAME --location $LOCATION --management-group-id 
 
 $inputObject = @{
   DeploymentName        = -join ('alz-PolicyDenyAssignments-{0}' -f (Get-Date -Format 'yyyyMMddTHHMMssffffZ'))[0..63]
-  Location              = 'eastus'
+  Location              = 'norwayeast'
   ManagementGroupId     = 'alz-landingzones'
   TemplateFile          = "infra-as-code/bicep/modules/policy/assignments/policyAssignmentManagementGroup.bicep"
   TemplateParameterFile = '@infra-as-code/bicep/modules/policy/assignments/parameters/policyAssignmentManagementGroup.dine.parameters.all.json'

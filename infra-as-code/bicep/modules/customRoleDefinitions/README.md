@@ -54,7 +54,7 @@ Input parameter file `parameters/customRoleDefinitions.parameters.all.json` defi
 MGID="alz"
 
 # Chosen Azure Region
-LOCATION="eastus"
+LOCATION="norwayeast"
 
 dateYMD=$(date +%Y%m%dT%H%M%S%NZ)
 NAME="alz-CustomRoleDefsDeployment-${dateYMD}"
@@ -88,7 +88,7 @@ az deployment mg create --name ${NAME:0:63} --location $LOCATION --management-gr
 
 $inputObject = @{
   DeploymentName        = -join ('alz-CustomRoleDefsDeployment-{0}' -f (Get-Date -Format 'yyyyMMddTHHMMssffffZ'))[0..63]
-  Location              = 'eastus'
+  Location              = 'norwayeast'
   ManagementGroupId     = 'alz'
   TemplateFile          = "infra-as-code/bicep/modules/customRoleDefinitions/customRoleDefinitions.bicep"
   TemplateParameterFile = 'infra-as-code/bicep/modules/customRoleDefinitions/parameters/customRoleDefinitions.parameters.all.json'

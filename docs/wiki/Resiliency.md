@@ -77,7 +77,7 @@ GROUP="rg-$TopLevelMGPrefix-hub-networking-001"
 TEMPLATEFILE="infra-as-code/bicep/modules/hubNetworking/hubNetworking.bicep"
 PARAMETERS="@infra-as-code/bicep/modules/hubNetworking/parameters/hubNetworking.parameters.az.all.json"
 
-az group create --location eastus \
+az group create --location norwayeast \
    --name $GROUP
 
 az deployment group create --name ${NAME:0:63} --resource-group $GROUP --template-file $TEMPLATEFILE --parameters $PARAMETERS
@@ -108,7 +108,7 @@ $inputObject = @{
 
 New-AzResourceGroup `
   -Name $inputObject.ResourceGroupName `
-  -Location 'eastus'
+  -Location 'norwayeast'
 
 New-AzResourceGroupDeployment @inputObject
 ```
@@ -154,7 +154,7 @@ PARAMETERS="@infra-as-code/bicep/modules/vwanConnectivity/parameters/vwanConnect
 # Create Resource Group - optional when using an existing resource group
 az group create \
   --name $GROUP \
-  --location eastus
+  --location norwayeast
 
 az deployment group create --name ${NAME:0:63} --resource-group $GROUP --template-file $TEMPLATEFILE --parameters $PARAMETERS
 ```
@@ -182,7 +182,7 @@ $inputObject = @{
 
 New-AzResourceGroup `
   -Name $inputObject.ResourceGroupName `
-  -Location 'EastUs'
+  -Location 'norwayeast'
 
 New-AzResourceGroupDeployment @inputObject
 ```

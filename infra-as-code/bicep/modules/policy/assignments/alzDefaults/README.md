@@ -30,7 +30,7 @@ The module does not generate any outputs.
 
 dateYMD=$(date +%Y%m%dT%H%M%S%NZ)
 NAME="alz-alzPolicyAssignmentDefaults-${dateYMD}"
-LOCATION="eastus"
+LOCATION="norwayeast"
 MGID="alz"
 TEMPLATEFILE="infra-as-code/bicep/modules/policy/assignments/alzDefaults/alzDefaultPolicyAssignments.bicep"
 PARAMETERS="@infra-as-code/bicep/modules/policy/assignments/alzDefaults/parameters/alzDefaultPolicyAssignments.parameters.all.json"
@@ -58,7 +58,7 @@ az deployment mg create --name ${NAME:0:63} --location $LOCATION --management-gr
 
 $inputObject = @{
   DeploymentName        = -join ('alz-alzPolicyAssignmentDefaultsDeployment-{0}' -f (Get-Date -Format 'yyyyMMddTHHMMssffffZ'))[0..63]
-  Location              = 'eastus'
+  Location              = 'norwayeast'
   ManagementGroupId     = 'alz'
   TemplateFile          = "infra-as-code/bicep/modules/policy/assignments/alzDefaults/alzDefaultPolicyAssignments.bicep"
   TemplateParameterFile = 'infra-as-code/bicep/modules/policy/assignments/alzDefaults/parameters/alzDefaultPolicyAssignments.parameters.all.json'

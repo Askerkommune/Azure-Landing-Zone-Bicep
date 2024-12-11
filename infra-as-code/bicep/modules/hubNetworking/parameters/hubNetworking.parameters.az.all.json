@@ -3,13 +3,13 @@
   "contentVersion": "1.0.0.0",
   "parameters": {
     "parLocation": {
-      "value": "eastus"
+      "value": "norwayeast"
     },
     "parCompanyPrefix": {
       "value": "alz"
     },
     "parHubNetworkName": {
-      "value": "alz-hub-eastus"
+      "value": "alz-hub-norwayeast"
     },
     "parHubNetworkAddressPrefix": {
       "value": "10.20.0.0/16"
@@ -79,10 +79,10 @@
       "value": true
     },
     "parAzFirewallName": {
-      "value": "alz-azfw-eastus"
+      "value": "alz-azfw-norwayeast"
     },
     "parAzFirewallPoliciesName": {
-      "value": "alz-azfwpolicy-eastus"
+      "value": "alz-azfwpolicy-norwayeast"
     },
     "parAzFirewallTier": {
       "value": "Standard"
@@ -118,7 +118,7 @@
       "value": []
     },
     "parHubRouteTableName": {
-      "value": "alz-hub-routetable-eastus"
+      "value": "alz-hub-routetable-norwayeast"
     },
     "parDisableBgpRoutePropagation": {
       "value": false

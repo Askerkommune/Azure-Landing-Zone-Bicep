@@ -35,7 +35,7 @@ RESOURCEGROUP="rg-bicep-acr"
 PARAMETERS="@infra-as-code/bicep/CRML/containerRegistry/parameters/containerRegistry.parameters.all.json"
 TEMPLATEFILE="infra-as-code/bicep/CRML/containerRegistry/containerRegistry.bicep"
 
-az group create --location eastus \
+az group create --location norwayeast \
    --name rg-bicep-acr
 
 az deployment group create --name ${NAME:0:63} --resource-group $RESOURCEGROUP --parameters $PARAMETERS --template-file $TEMPLATEFILE
@@ -45,7 +45,7 @@ az deployment group create --name ${NAME:0:63} --resource-group $RESOURCEGROUP -
 
 ```powershell
 New-AzResourceGroup -Name 'rg-bicep-acr' `
-  -Location 'EastUs'
+  -Location 'norwayeast'
 
   $inputObject = @{
   DeploymentName        = -join ('alz-ContainerRegistry-{0}' -f (Get-Date -Format 'yyyyMMddTHHMMssffffZ'))[0..63]

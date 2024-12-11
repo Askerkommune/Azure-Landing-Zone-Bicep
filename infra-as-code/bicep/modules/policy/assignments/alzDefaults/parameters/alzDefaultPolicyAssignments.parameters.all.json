@@ -36,7 +36,7 @@
       }
     },
     "parLogAnalyticsWorkSpaceAndAutomationAccountLocation": {
-      "value": "eastus"
+      "value": "norwayeast"
     },
     "parLogAnalyticsWorkspaceResourceId": {
       "value": "/subscriptions/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/resourceGroups/alz-logging/providers/Microsoft.OperationalInsights/workspaces/alz-log-analytics"
@@ -72,7 +72,7 @@
       "value": "/subscriptions/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/resourceGroups/rg-alz-hub-networking-001"
     },
     "parPrivateDnsZonesLocation": {
-      "value": "eastus"
+      "value": "norwayeast"
     },
     "parPrivateDnsZonesNamesToAuditInCorp": {
       "value": []

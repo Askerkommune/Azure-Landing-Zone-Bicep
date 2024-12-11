@@ -34,8 +34,8 @@ The module will generate the following outputs:
 
 | Output                      | Type   | Example                                                                                                                                             |
 | --------------------------- | ------ | --------------------------------------------------------------------------------------------------------------------------------------------------- |
-| outSpokeVirtualNetworkName | string | Corp-Spoke-eastus                                                                                                                                   |
-| outSpokeVirtualNetworkId    | string | /subscriptions/xxxxxxxx-xxxx-xxxx-xxxxx-xxxxxxxxx/resourceGroups/net-core-hub-eastus-rg/providers/Microsoft.Network/virtualNetworks/vnet-hub-eastus |
+| outSpokeVirtualNetworkName | string | Corp-Spoke-norwayeast                                                                                                                                   |
+| outSpokeVirtualNetworkId    | string | /subscriptions/xxxxxxxx-xxxx-xxxx-xxxxx-xxxxxxxxx/resourceGroups/net-core-hub-norwayeast-rg/providers/Microsoft.Network/virtualNetworks/vnet-hub-norwayeast |
 
 ## Deployment
 
@@ -66,7 +66,7 @@ PARAMETERS="@infra-as-code/bicep/modules/spokeNetworking/parameters/spokeNetwork
 # Create Resource Group - optional when using an existing resource group
 az group create \
   --name $GROUP \
-  --location eastus
+  --location norwayeast
 
 az deployment group create --name ${NAME:0:63} --resource-group $GROUP --template-file $TEMPLATEFILE --parameters $PARAMETERS
 ```
@@ -117,7 +117,7 @@ $inputObject = @{
 
 New-AzResourceGroup `
   -Name $inputObject.ResourceGroupName `
-  -Location 'eastus'
+  -Location 'norwayeast'
 
 New-AzResourceGroupDeployment @inputObject
 ```

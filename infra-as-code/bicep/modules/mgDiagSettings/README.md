@@ -24,7 +24,7 @@ The inputs for this module are defined in `parameters/mgDiagSettings.parameters.
 
 dateYMD=$(date +%Y%m%dT%H%M%S%NZ)
 NAME="alz-mgDiagSettings-${dateYMD}"
-LOCATION="eastus"
+LOCATION="norwayeast"
 TEMPLATEFILE="infra-as-code/bicep/modules/mgDiagSettings/mgDiagSettings.bicep"
 PARAMETERS="infra-as-code/bicep/modules/mgDiagSettings/parameters/mgDiagSettings.parameters.all.json"
 # Set the top level Management Group ID in accordance to your environment. This example assumes default 'alz'.
@@ -56,7 +56,7 @@ az deployment mg create --name $NAME --location $LOCATION --template-file $TEMPL
 
 $inputObject = @{
   DeploymentName        = -join ('alz-mgDiagSettings-{0}' -f (Get-Date -Format 'yyyyMMddTHHMMssffffZ'))[0..63]
-  Location              = 'eastus'
+  Location              = 'norwayeast'
   TemplateFile          = "infra-as-code/bicep/modules/mgDiagSettings/mgDiagSettings.bicep"
   TemplateParameterFile = 'infra-as-code/bicep/modules/mgDiagSettings/parameters/mgDiagSettings.parameters.all.json'
   ManagementGroupId     = 'alz'

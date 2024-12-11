@@ -149,7 +149,7 @@ In this example, the management groups are created at the `Tenant Root Group` th
 
 dateYMD=$(date +%Y%m%dT%H%M%S%NZ)
 NAME="alz-MGDeployment-${dateYMD}"
-LOCATION="eastus"
+LOCATION="norwayeast"
 TEMPLATEFILE="infra-as-code/bicep/modules/managementGroups/managementGroups.bicep"
 PARAMETERS="@infra-as-code/bicep/modules/managementGroups/parameters/managementGroups.parameters.all.json"
 
@@ -177,7 +177,7 @@ Use this module if you do not want to grant Tenant Root Management Group Deploym
 
 dateYMD=$(date +%Y%m%dT%H%M%S%NZ)
 NAME="alz-MGDeployment-${dateYMD}"
-LOCATION="eastus"
+LOCATION="norwayeast"
 TEMPLATEFILE="infra-as-code/bicep/modules/managementGroups/managementGroupsScopeEscape.bicep"
 PARAMETERS="@infra-as-code/bicep/modules/managementGroups/parameters/managementGroups.parameters.all.json"
 MGID="alz"
@@ -205,7 +205,7 @@ az deployment mg create --name ${NAME:0:63} --location $LOCATION --template-file
 
 $inputObject = @{
   DeploymentName        = -join ('alz-MGDeployment-{0}' -f (Get-Date -Format 'yyyyMMddTHHMMssffffZ'))[0..63]
-  Location              = 'EastUS'
+  Location              = 'norwayeast'
   TemplateFile          = "infra-as-code/bicep/modules/managementGroups/managementGroups.bicep"
   TemplateParameterFile = 'infra-as-code/bicep/modules/managementGroups/parameters/managementGroups.parameters.all.json'
 }
@@ -233,7 +233,7 @@ Use this module if you do not want to grant Tenant Root Management Group Deploym
 
 $inputObject = @{
   DeploymentName        = -join ('alz-MGDeployment-{0}' -f (Get-Date -Format 'yyyyMMddTHHMMssffffZ'))[0..63]
-  Location              = 'EastUS'
+  Location              = 'norwayeast'
   TemplateFile          = "infra-as-code/bicep/modules/managementGroups/managementGroupsScopeEscape.bicep"
   TemplateParameterFile = 'infra-as-code/bicep/modules/managementGroups/parameters/managementGroups.parameters.all.json'
   ManagementGroupId     = 'alz'

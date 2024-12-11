@@ -33,9 +33,9 @@ Module deploys the following resources which can be configured by parameters:
 >    - `privatelink.xxxxxx.batch.azure.com`
 >
 >     Will become:
->    - `privatelink.eastus.azmk8s.io`
->    - `privatelink.eastus.backup.windowsazure.com`
->    - `privatelink.eastus.batch.azure.com`
+>    - `privatelink.norwayeast.azmk8s.io`
+>    - `privatelink.norwayeast.backup.windowsazure.com`
+>    - `privatelink.norwayeast.batch.azure.com`
 <!-- markdownlint-restore -->
 
 ## Outputs
@@ -44,12 +44,12 @@ The module will generate the following outputs:
 
 | Output                | Type   | Example                                                                                                                                                                                                  |
 | --------------------- | ------ | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| outVirtualWanName     | string | alz-vwan-eastus                                                                                                                                                                                          |
-| outVirtualWanId       | string | /subscriptions/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/resourceGroups/alz-vwan-eastus/providers/Microsoft.Network/virtualWans/alz-vwan-eastus                                                               |
-| outVirtualHubName     | string | alz-vhub-eastus                                                                                                                                                                                          |
-| outVirtualHubId       | string | /subscriptions/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/resourceGroups/alz-vwan-eastus/providers/Microsoft.Network/virtualHubs/alz-vhub-eastus                                                               |
-| outDdosPlanResourceId | string | /subscriptions/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/resourceGroups/alz-vwan-eastus/providers/Microsoft.Network/ddosProtectionPlans/alz-ddos-plan                                                         |
-| outPrivateDnsZones        | array  | `[{"name":"privatelink.azurecr.io","id":"/subscriptions/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/resourceGroups/net-lz-spk-eastus-rg/providers/Microsoft.Network/privateDnsZones/privatelink.azurecr.io"},{"name":"privatelink.azurewebsites.net","id":"/subscriptions/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/resourceGroups/net-lz-spk-eastus-rg/providers/Microsoft.Network/privateDnsZones/privatelink.azurewebsites.net"}]` |
+| outVirtualWanName     | string | alz-vwan-norwayeast                                                                                                                                                                                          |
+| outVirtualWanId       | string | /subscriptions/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/resourceGroups/alz-vwan-norwayeast/providers/Microsoft.Network/virtualWans/alz-vwan-norwayeast                                                               |
+| outVirtualHubName     | string | alz-vhub-norwayeast                                                                                                                                                                                          |
+| outVirtualHubId       | string | /subscriptions/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/resourceGroups/alz-vwan-norwayeast/providers/Microsoft.Network/virtualHubs/alz-vhub-norwayeast                                                               |
+| outDdosPlanResourceId | string | /subscriptions/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/resourceGroups/alz-vwan-norwayeast/providers/Microsoft.Network/ddosProtectionPlans/alz-ddos-plan                                                         |
+| outPrivateDnsZones        | array  | `[{"name":"privatelink.azurecr.io","id":"/subscriptions/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/resourceGroups/net-lz-spk-norwayeast-rg/providers/Microsoft.Network/privateDnsZones/privatelink.azurecr.io"},{"name":"privatelink.azurewebsites.net","id":"/subscriptions/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/resourceGroups/net-lz-spk-norwayeast-rg/providers/Microsoft.Network/privateDnsZones/privatelink.azurewebsites.net"}]` |
 | outPrivateDnsZonesNames  | array  | `["privatelink.azurecr.io", "privatelink.azurewebsites.net"]` |
 
 ## Deployment
@@ -82,7 +82,7 @@ PARAMETERS="@infra-as-code/bicep/modules/vwanConnectivity/parameters/vwanConnect
 # Create Resource Group - optional when using an existing resource group
 az group create \
   --name $GROUP \
-  --location eastus
+  --location norwayeast
 
 az deployment group create --name ${NAME:0:63} --resource-group $GROUP --template-file $TEMPLATEFILE --parameters $PARAMETERS
 ```
@@ -133,7 +133,7 @@ $inputObject = @{
 
 New-AzResourceGroup `
   -Name $inputObject.ResourceGroupName `
-  -Location 'EastUs'
+  -Location 'norwayeast'
 
 New-AzResourceGroupDeployment @inputObject
 ```
@@ -190,7 +190,7 @@ parVirtualWanHubs: [
         parExpressRouteGatewayEnabled: true
         parAzFirewallEnabled: true
         parVirtualHubAddressPrefix: '10.100.0.0/23'
-        parHubLocation: 'eastus2'
+        parHubLocation: 'norwayeast2'
         parHubRoutingPreference: 'ExpressRoute'
         parVirtualRouterAutoScaleConfiguration: 2
         parVirtualHubRoutingIntentDestinations: []

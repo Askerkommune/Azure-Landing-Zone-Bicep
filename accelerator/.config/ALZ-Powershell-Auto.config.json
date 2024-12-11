@@ -409,7 +409,7 @@
         "LogAnalyticsWorkspaceLocation": {
           "source": "calculated",
           "pattern": "{%Location%}",
-          "process": "($args[0] -eq \"eastus\") ? \"eastus2\" : ($args[0] -eq \"eastus2\") ? \"eastus\" : $args[0]",
+          "process": "($args[0] -eq \"norwayeast\") ? \"norwayeast2\" : ($args[0] -eq \"norwayeast2\") ? \"norwayeast\" : $args[0]",
           "targets": [
             {
               "Name": "parLogAnalyticsWorkspaceLocation.value",

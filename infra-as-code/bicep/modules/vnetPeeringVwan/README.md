@@ -19,8 +19,8 @@ The module will generate the following outputs:
 
 | Output                    | Type   | Example                                                                                                                                                                                                  |
 | ------------------------- | ------ | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| outHubVirtualNetworkConnectionName | string | `alz-vhub-eastus/vnet-spoke-vhc`                                                                                                                                                                                            |
-| outHubVirtualNetworkConnectionResourceId      | string | `/subscriptions/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/resourceGroups/alz-vwan-eastus/providers/Microsoft.Network/virtualHubs/alz-vhub-eastus/hubVirtualNetworkConnections/vnet-spoke-vhc`                                                                                                                                                                                          |
+| outHubVirtualNetworkConnectionName | string | `alz-vhub-norwayeast/vnet-spoke-vhc`                                                                                                                                                                                            |
+| outHubVirtualNetworkConnectionResourceId      | string | `/subscriptions/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/resourceGroups/alz-vwan-norwayeast/providers/Microsoft.Network/virtualHubs/alz-vhub-norwayeast/hubVirtualNetworkConnections/vnet-spoke-vhc`                                                                                                                                                                                          |
 
 ## Deployment
 
@@ -42,7 +42,7 @@ az account set --subscription $ConnectivitySubscriptionId
 
 dateYMD=$(date +%Y%m%dT%H%M%S%NZ)
 NAME="alz-vnetPeeringVwanDeployment-${dateYMD}"
-LOCATION="eastus"
+LOCATION="norwayeast"
 TEMPLATEFILE="infra-as-code/bicep/modules/vnetPeeringVwan/vnetPeeringVwan.bicep"
 PARAMETERS="@infra-as-code/bicep/modules/vnetPeeringVwan/parameters/vnetPeeringVwan.parameters.all.json"
 
@@ -75,7 +75,7 @@ Select-AzSubscription -SubscriptionId $ConnectivitySubscriptionId
 
 $inputObject = @{
   DeploymentName        = -join ('alz-VnetPeeringWanDeployment-{0}' -f (Get-Date -Format 'yyyyMMddTHHMMssffffZ'))[0..63]
-  Location              = 'eastus'
+  Location              = 'norwayeast'
   TemplateFile          = "infra-as-code/bicep/modules/vnetPeeringVwan/vnetPeeringVwan.bicep"
   TemplateParameterFile = 'infra-as-code/bicep/modules/vnetPeeringVwan/parameters/vnetPeeringVwan.parameters.all.json'
 }

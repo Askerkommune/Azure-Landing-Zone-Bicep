@@ -57,7 +57,7 @@ The module will generate the following outputs:
 | outAzFirewallPrivateIp    | string | 192.168.100.1                                                                                                                                                                                            |
 | outAzFirewallName         | string | MyAzureFirewall                                                                                                                                                                                          |
 | outDdosPlanResourceId     | string | /subscriptions/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/resourceGroups/HUB_Networking_POC/providers/Microsoft.Network/ddosProtectionPlans/alz-ddos-plan                                                      |
-| outPrivateDnsZones        | array  | `[{"name":"privatelink.azurecr.io","id":"/subscriptions/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/resourceGroups/net-lz-spk-eastus-rg/providers/Microsoft.Network/privateDnsZones/privatelink.azurecr.io"},{"name":"privatelink.azurewebsites.net","id":"/subscriptions/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/resourceGroups/net-lz-spk-eastus-rg/providers/Microsoft.Network/privateDnsZones/privatelink.azurewebsites.net"}]` |
+| outPrivateDnsZones        | array  | `[{"name":"privatelink.azurecr.io","id":"/subscriptions/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/resourceGroups/net-lz-spk-norwayeast-rg/providers/Microsoft.Network/privateDnsZones/privatelink.azurecr.io"},{"name":"privatelink.azurewebsites.net","id":"/subscriptions/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/resourceGroups/net-lz-spk-norwayeast-rg/providers/Microsoft.Network/privateDnsZones/privatelink.azurewebsites.net"}]` |
 | outPrivateDnsZonesNames  | array  | `["privatelink.azurecr.io", "privatelink.azurewebsites.net"]` |
 | outHubVirtualNetworkName  | array  | MyHubVirtualNetworkName |
 | outHubVirtualNetworkId    | array  | /subscriptions/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/resourceGroups/HUB_Networking_POC/providers/Microsoft.Network/virtualNetworks/my-hub-vnet   |
@@ -96,7 +96,7 @@ GROUP="rg-$TopLevelMGPrefix-hub-networking-001"
 TEMPLATEFILE="infra-as-code/bicep/modules/hubNetworking/hubNetworking.bicep"
 PARAMETERS="@infra-as-code/bicep/modules/hubNetworking/parameters/hubNetworking.parameters.all.json"
 
-az group create --location eastus \
+az group create --location norwayeast \
    --name $GROUP
 
 az deployment group create --name ${NAME:0:63} --resource-group $GROUP --template-file $TEMPLATEFILE --parameters $PARAMETERS
@@ -146,7 +146,7 @@ $inputObject = @{
 
 New-AzResourceGroup `
   -Name $inputObject.ResourceGroupName `
-  -Location 'eastus'
+  -Location 'norwayeast'
 
 New-AzResourceGroupDeployment @inputObject
 ```
@@ -192,15 +192,15 @@ To extend your infrastructure to [additional regions](https://learn.microsoft.co
 
 If you want to use a single deployment targeting two regions, you can use the [hubNetworking-multiRegion.bicep](https://github.com/Azure/ALZ-Bicep/blob/main/infra-as-code/bicep/modules/hubNetworking/hubNetworking-multiRegion.bicep) file along with the [hubNetwork.parameters.az.multiRegion.all.parameters.json](https://github.com/Azure/ALZ-Bicep/blob/main/infra-as-code/bicep/modules/hubNetworking/parameters/hubNetworking.parameters.az.all.json) file. This module uses similar parameters from the `hubNetworking` module, but the parameters specific to the secondary region are suffixed with `SecondaryLocation`. It also leverages the `vnetPeering` module to peer the two hubs together.
 
-> For the example below, two hubs will be deployed across *eastus* and *westus* regions.
+> For the example below, two hubs will be deployed across *norwayeast* and *westus* regions.
 
-1. Duplicate the [parameters file](https://github.com/Azure/ALZ-Bicep/blob/main/infra-as-code/bicep/modules/hubNetworking/parameters/hubNetworking.parameters.az.all.json) and create a new file for the first hub in the *eastus* region **hubNetworking.parameters.az.all.eastus.json**.
+1. Duplicate the [parameters file](https://github.com/Azure/ALZ-Bicep/blob/main/infra-as-code/bicep/modules/hubNetworking/parameters/hubNetworking.parameters.az.all.json) and create a new file for the first hub in the *norwayeast* region **hubNetworking.parameters.az.all.norwayeast.json**.
 
     > **NOTE:**
-    > Some regions do not support availability zones, so the [parameters file](https://github.com/Azure/ALZ-Bicep/blob/main/infra-as-code/bicep/modules/hubNetworking/parameters/hubNetworking.parameters.all.json) without availability zones should be used. East US supports availability zones which is why the `hubNetworking.parameters.az.all.eastus.json` file is used in this example.
+    > Some regions do not support availability zones, so the [parameters file](https://github.com/Azure/ALZ-Bicep/blob/main/infra-as-code/bicep/modules/hubNetworking/parameters/hubNetworking.parameters.all.json) without availability zones should be used. East US supports availability zones which is why the `hubNetworking.parameters.az.all.norwayeast.json` file is used in this example.
 
-1. Edit the new parameters file with the needed configuration for the *eastus* region.
-1. Deploy the `hubNetworking` module to deploy the first hub in the *eastus* region using the new parameters file.
+1. Edit the new parameters file with the needed configuration for the *norwayeast* region.
+1. Deploy the `hubNetworking` module to deploy the first hub in the *norwayeast* region using the new parameters file.
 
     **Azure CLI (Example: East US Region)**
 
@@ -216,7 +216,7 @@ If you want to use a single deployment targeting two regions, you can use the [h
     TopLevelMGPrefix="alz"
 
     # Set the region where the hub will be deployed
-    location="eastus"
+    location="norwayeast"
 
     dateYMD=$(date +%Y%m%dT%H%M%S%NZ)
     NAME="alz-HubNetworkingDeploy-${dateYMD}"
@@ -243,7 +243,7 @@ If you want to use a single deployment targeting two regions, you can use the [h
     $TopLevelMGPrefix = "alz"
 
     # Set the region where the hub will be deployed
-    $location = "eastus"
+    $location = "norwayeast"
 
     # Parameters necessary for deployment
     $inputObject = @{
@@ -260,9 +260,9 @@ If you want to use a single deployment targeting two regions, you can use the [h
     New-AzResourceGroupDeployment @inputObject
     ```
 
-    Example output in the eastus region:
+    Example output in the norwayeast region:
 
-      ![Example Deployment Output in eastus region](media/exampleDeploymentOutputEastus.png "Example Deployment Output in eastus region")
+      ![Example Deployment Output in norwayeast region](media/exampleDeploymentOutputnorwayeast.png "Example Deployment Output in norwayeast region")
 
 1. Duplicate the [parameters file](https://github.com/Azure/ALZ-Bicep/blob/main/infra-as-code/bicep/modules/hubNetworking/parameters/hubNetworking.parameters.all.json) and create a new file for the additional hub in the *westus* region **hubNetworking.parameters.az.all.westus.json**.
 
@@ -359,7 +359,7 @@ If you want to use a single deployment targeting two regions, you can use the [h
 
     dateYMD=$(date +%Y%m%dT%H%M%S%NZ)
     NAME="alz-vnetPeeringDeploy-${dateYMD}"
-    GROUP="rg-alz-hub-networking-eastus" # Specify the name of the resource group of the first hub network.
+    GROUP="rg-alz-hub-networking-norwayeast" # Specify the name of the resource group of the first hub network.
     TEMPLATEFILE="infra-as-code/bicep/modules/vnetPeering/vnetPeering.bicep"
     PARAMETERS="@infra-as-code/bicep/modules/vnetPeering/parameters/vnetPeering.parameters.all.json"
 
@@ -381,7 +381,7 @@ If you want to use a single deployment targeting two regions, you can use the [h
     # Parameters necessary for deployment
     $inputObject = @{
       DeploymentName        = 'alz-vnetPeeringDeploy-{0}' -f (-join (Get-Date -Format 'yyyyMMddTHHMMssffffZ')[0..63])
-      ResourceGroupName     = "rg-alz-hub-networking-eastus" # Specify the name of the resource group of the first hub network.
+      ResourceGroupName     = "rg-alz-hub-networking-norwayeast" # Specify the name of the resource group of the first hub network.
       TemplateFile          = "infra-as-code/bicep/modules/vnetPeering/vnetPeering.bicep"
       TemplateParameterFile = "infra-as-code/bicep/modules/vnetPeering/parameters/vnetPeering.parameters.all.json"
     }

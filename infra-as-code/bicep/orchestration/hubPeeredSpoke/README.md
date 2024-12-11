@@ -52,7 +52,7 @@ In this example, the spoke resources will be deployed to the resource group spec
 
 dateYMD=$(date +%Y%m%dT%H%M%S%NZ)
 NAME="alz-HubPeeredSpoke-${dateYMD}"
-LOCATION="eastus"
+LOCATION="norwayeast"
 MGID="alz"
 TEMPLATEFILE="infra-as-code/bicep/orchestration/hubPeeredSpoke/hubPeeredSpoke.bicep"
 PARAMETERS="@infra-as-code/bicep/orchestration/hubPeeredSpoke/parameters/hubPeeredSpoke.parameters.all.json"
@@ -80,7 +80,7 @@ az deployment mg create --name ${NAME:0:63} --location $LOCATION --management-gr
 
 $inputObject = @{
   DeploymentName        = -join ('alz-HubPeeredSpoke-{0}' -f (Get-Date -Format 'yyyyMMddTHHMMssffffZ'))[0..63]
-  Location              = 'EastUS'
+  Location              = 'norwayeast'
   ManagementGroupId     = 'alz'
   TemplateFile          = "infra-as-code/bicep/orchestration/hubPeeredSpoke/hubPeeredSpoke.bicep"
   TemplateParameterFile = 'infra-as-code/bicep/orchestration/hubPeeredSpoke/parameters/hubPeeredSpoke.parameters.all.json'

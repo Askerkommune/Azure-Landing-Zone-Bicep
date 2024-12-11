@@ -95,7 +95,7 @@ Assign policies to Confidential Corp and Online groups under Landing Zones.
 
 Location of Log Analytics Workspace & Automation Account.
 
-- Default value: `eastus`
+- Default value: `norwayeast`
 
 ### parLogAnalyticsWorkspaceResourceId
 
@@ -276,7 +276,7 @@ Opt out of deployment telemetry.
             "value": false
         },
         "parLogAnalyticsWorkSpaceAndAutomationAccountLocation": {
-            "value": "eastus"
+            "value": "norwayeast"
         },
         "parLogAnalyticsWorkspaceResourceId": {
             "value": ""

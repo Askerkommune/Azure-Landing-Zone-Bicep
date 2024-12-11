@@ -24,7 +24,7 @@ The inputs for this module are defined in `parameters/privateDnsZoneLinks.parame
 az deployment rg create \
   --template-file infra-as-code/bicep/modules/privateDnsZoneLinks/privateDnsZoneLinks.bicep \
   --parameters @infra-as-code/bicep/modules/privateDnsZoneLinks/parameters/privateDnsZoneLinks.parameters.all.json \
-  --location eastus
+  --location norwayeast
 ```
 
 OR
@@ -44,7 +44,7 @@ az deployment rg create \
 New-AzResourceGroupDeployment `
   -TemplateFile infra-as-code/bicep/modules/privateDnsZoneLinks/privateDnsZoneLinks.bicep `
   -TemplateParameterFile @infra-as-code/bicep/modules/privateDnsZoneLinks/parameters/privateDnsZoneLinks.parameters.all.json `
-  -Location eastus
+  -Location norwayeast
 ```
 
 OR
