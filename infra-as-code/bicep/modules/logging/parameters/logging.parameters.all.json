@@ -19,7 +19,7 @@
     },
     "parLogAnalyticsWorkspaceSolutions": {
       "value": [
-        "SecurityInsights"
+
       ]
     },
     "parDataCollectionRuleVMInsightsName": {
@@ -34,42 +34,23 @@
     "parUserAssignedManagedIdentityName": {
       "value": "alz-umi-identity"
     },
-    "parLogAnalyticsWorkspaceLinkAutomationAccount": {
-      "value": true
-    },
-    "parAutomationAccountName": {
-      "value": "alz-automation-account"
-    },
-    "parAutomationAccountLocation": {
-      "value": "norwayeast2"
-    },
-    "parAutomationAccountUseManagedIdentity": {
-      "value": true
-    },
-    "parAutomationAccountPublicNetworkAccess": {
-      "value": true
-    },
     "parTags": {
       "value": {
-        "Environment": "Live"
+        "Environment": "Live",
+        "ALZ": "Logging",
+        "Created by": "adminmartinf@kommuneasker.onmicrosoft.com",
+        "Created at": "2024-12-11",
+        "Repo": "https://puzzel.visualstudio.com/sales-intelligence/_git/azure-si-eu1",
+        "Deployment tool": "Bicep"
       }
     },
     "parUseSentinelClassicPricingTiers": {
       "value": false
     },
-    "parLogAnalyticsLinkedServiceAutomationAccountName": {
-      "value": "Automation"
-    },
     "parTelemetryOptOut": {
       "value": false
     },
     "parGlobalResourceLock": {
-      "value": {
-        "kind": "None",
-        "notes": "This lock was created by the ALZ Bicep Logging Module."
-      }
-    },
-    "parAutomationAccountLock": {
       "value": {
         "kind": "None",
         "notes": "This lock was created by the ALZ Bicep Logging Module."

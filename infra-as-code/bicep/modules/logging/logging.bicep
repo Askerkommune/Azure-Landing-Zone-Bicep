@@ -138,36 +138,8 @@ param parUserAssignedManagedIdentityName string = 'alz-logging-mi'
 @sys.description('User Assigned Managed Identity location.')
 param parUserAssignedManagedIdentityLocation string = resourceGroup().location
 
-@sys.description('Log Analytics Workspace should be linked with the automation account.')
-param parLogAnalyticsWorkspaceLinkAutomationAccount bool = true
-
-@sys.description('Automation account name.')
-param parAutomationAccountName string = 'alz-automation-account'
-@sys.description('Automation Account region name. - Ensure the regions selected is a supported mapping as per: https://docs.microsoft.com/azure/automation/how-to/region-mappings.')
-param parAutomationAccountLocation string = resourceGroup().location
-
-@sys.description('Automation Account - use managed identity.')
-param parAutomationAccountUseManagedIdentity bool = true
-
-@sys.description('Automation Account - Public network access.')
-param parAutomationAccountPublicNetworkAccess bool = true
-
-@sys.description('''Resource Lock Configuration for Automation Account.
-
-- `kind` - The lock settings of the service which can be CanNotDelete, ReadOnly, or None.
-- `notes` - Notes about this lock.
-
-''')
-param parAutomationAccountLock lockType = {
-  kind: 'None'
-  notes: 'This lock was created by the ALZ Bicep Logging Module.'
-}
-
 @sys.description('Tags you would like to be applied to all resources in this module.')
 param parTags object = {}
-
-@sys.description('Tags you would like to be applied to Automation Account.')
-param parAutomationAccountTags object = parTags
 
 @sys.description('Tags you would like to be applied to Log Analytics Workspace.')
 param parLogAnalyticsWorkspaceTags object = parTags
@@ -175,8 +147,6 @@ param parLogAnalyticsWorkspaceTags object = parTags
 @sys.description('Set Parameter to true to use Sentinel Classic Pricing Tiers, following changes introduced in July 2023 as documented here: https://learn.microsoft.com/azure/sentinel/enroll-simplified-pricing-tier.')
 param parUseSentinelClassicPricingTiers bool = false
 
-@sys.description('Log Analytics LinkedService name for Automation Account.')
-param parLogAnalyticsLinkedServiceAutomationAccountName string = 'Automation'
 
 @sys.description('Set Parameter to true to Opt-out of deployment telemetry')
 param parTelemetryOptOut bool = false
@@ -190,6 +160,7 @@ resource resUserAssignedManagedIdentity 'Microsoft.ManagedIdentity/userAssignedI
   tags: parTags
 }
 
+/*
 resource resAutomationAccount 'Microsoft.Automation/automationAccounts@2023-11-01' = {
   name: parAutomationAccountName
   location: parAutomationAccountLocation
@@ -217,6 +188,7 @@ resource resAutomationAccountLock 'Microsoft.Authorization/locks@2020-05-01' = i
     notes: (parGlobalResourceLock.kind != 'None') ? parGlobalResourceLock.?notes : parAutomationAccountLock.?notes
   }
 }
+  */
 
 resource resLogAnalyticsWorkspace 'Microsoft.OperationalInsights/workspaces@2022-10-01' = {
   name: parLogAnalyticsWorkspaceName
@@ -678,13 +650,6 @@ resource resLogAnalyticsWorkspaceSolutionsLock 'Microsoft.Authorization/locks@20
   }
 }]
 
-resource resLogAnalyticsLinkedServiceForAutomationAccount 'Microsoft.OperationalInsights/workspaces/linkedServices@2020-08-01' = if (parLogAnalyticsWorkspaceLinkAutomationAccount) {
-  parent: resLogAnalyticsWorkspace
-  name: parLogAnalyticsLinkedServiceAutomationAccountName
-  properties: {
-    resourceId: resAutomationAccount.id
-  }
-}
 
 // Optional Deployment for Customer Usage Attribution
 module modCustomerUsageAttribution '../../CRML/customerUsageAttribution/cuaIdResourceGroup.bicep' = if (!parTelemetryOptOut) {
@@ -710,5 +675,3 @@ output outLogAnalyticsWorkspaceId string = resLogAnalyticsWorkspace.id
 output outLogAnalyticsCustomerId string = resLogAnalyticsWorkspace.properties.customerId
 output outLogAnalyticsSolutions array = parLogAnalyticsWorkspaceSolutions
 
-output outAutomationAccountName string = resAutomationAccount.name
-output outAutomationAccountId string = resAutomationAccount.id
