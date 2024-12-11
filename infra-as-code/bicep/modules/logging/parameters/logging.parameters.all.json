@@ -43,7 +43,7 @@
         "ALZ": "Logging",
         "Creationdate": "2024-12-11",
         "Createdby": "adminmartinf@kommuneasker.onmicrosoft.com",
-        "CostCenter": "123",
+        "CostCenter": "12320",
         "Docs": "https://learn.microsoft.com/en-us/azure/cloud-adoption-framework/ready/landing-zone/",
         "Repo": "https://github.com/Askerkommune/Azure-Landing-Zone-Bicep",
         "Deployment tool": "Bicep"
