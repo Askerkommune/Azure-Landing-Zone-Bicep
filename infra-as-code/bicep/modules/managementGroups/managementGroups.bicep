@@ -65,7 +65,7 @@ var varLandingZoneMg = {
 // Used if parLandingZoneMgAlzDefaultsEnable == true
 var varLandingZoneMgChildrenAlzDefault = {
   corp: {
-    displayName: 'Corp'
+    displayName: 'Internal'
   }
   online: {
     displayName: 'Online'
