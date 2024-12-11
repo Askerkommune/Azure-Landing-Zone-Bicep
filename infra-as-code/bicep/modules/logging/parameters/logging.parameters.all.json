@@ -37,10 +37,15 @@
     "parTags": {
       "value": {
         "Environment": "Live",
+        "Owner": "christian.melgaard@asker.kommune.no",
+        "Department": "IT",
+        "Project": "Azure Landing Zone",
         "ALZ": "Logging",
-        "Created by": "adminmartinf@kommuneasker.onmicrosoft.com",
-        "Created at": "2024-12-11",
-        "Repo": "https://puzzel.visualstudio.com/sales-intelligence/_git/azure-si-eu1",
+        "Creationdate": "2024-12-11",
+        "Createdby": "adminmartinf@kommuneasker.onmicrosoft.com",
+        "CostCenter": "123",
+        "Docs": "https://learn.microsoft.com/en-us/azure/cloud-adoption-framework/ready/landing-zone/",
+        "Repo": "https://github.com/Askerkommune/Azure-Landing-Zone-Bicep",
         "Deployment tool": "Bicep"
       }
     },

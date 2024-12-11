@@ -41,7 +41,7 @@ az deployment mg create --name "Custom-Role" --location norwayeast --management-
 
 7. Do a what-if to check what is going to be deployed (Logging)
 ```
-az account set --subscription d826929a-41b6-495c-b772-40c9fd1b00bf (ak-management)
+az account set --subscription 5dc0166e-5c37-4b6f-be96-11ec28a8e4b3 (ak-management)
 
 az deployment group create --name Logging --resource-group rg-ak-logging-001 --template-file "infra-as-code/bicep/modules/logging/logging.bicep" --parameters "infra-as-code/bicep/modules/logging/parameters/logging.parameters.all.json" --what-if
 ```
