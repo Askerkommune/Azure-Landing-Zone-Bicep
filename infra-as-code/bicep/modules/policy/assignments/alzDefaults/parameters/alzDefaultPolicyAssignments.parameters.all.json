@@ -76,9 +76,6 @@
     "parPrivateDnsZonesLocation": {
       "value": "norwayeast"
     },
-    "parPrivateDnsZonesNamesToAuditInCorp": {
-      "value": []
-    },
     "parDisableAlzDefaultPolicies": {
       "value": false
     },

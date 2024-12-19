@@ -36,7 +36,7 @@ param parPolicyAssignmentNonComplianceMessages nonComplianceMessageType = []
 
 @description('Scope Resource IDs excluded from policy assignment.')
 param parPolicyAssignmentNotScopes array = [
-  '/providers/Microsoft.Management/managementGroups/ak-sandbox'
+  //'/providers/Microsoft.Management/managementGroups/ak-sandbox'
 ]
 
 @allowed([

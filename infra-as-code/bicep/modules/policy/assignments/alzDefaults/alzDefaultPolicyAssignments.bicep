@@ -2308,7 +2308,7 @@ module modPolicyAssignmentDecommEnforceAlz '../../../policy/assignments/policyAs
 
 // Modules - Policy Assignments - Sandbox Management Group
 // Module - Policy Assignment - Enforce-ALZ-Sandbox
-module modPolicyAssignmentSandboxEnforceAlz '../../../policy/assignments/policyAssignmentManagementGroup.bicep' = if (!contains(parExcludedPolicyAssignments, varPolicyAssignmentEnforceALZSandbox.libDefinition.name)) {
+module modPolicyAssignmentSandboxEnforceAlz '../../../policy/assignments/policyAssignmentManagementGroupSandbox.bicep' = if (!contains(parExcludedPolicyAssignments, varPolicyAssignmentEnforceALZSandbox.libDefinition.name)) {
   scope: managementGroup(varManagementGroupIds.sandbox)
   name: varModuleDeploymentNames.modPolicyAssignmentSandboxEnforceAlz
   params: {

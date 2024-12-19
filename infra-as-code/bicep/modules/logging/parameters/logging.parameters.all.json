@@ -19,7 +19,7 @@
     },
     "parLogAnalyticsWorkspaceSolutions": {
       "value": [
-
+        "SecurityInsights"
       ]
     },
     "parDataCollectionRuleVMInsightsName": {
